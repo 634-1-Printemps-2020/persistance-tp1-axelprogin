@@ -7,10 +7,16 @@ import ch.hesge.cours634.counter.UpperLimitedPositiveCounter;
 public class Main {
 
     public static void main(String[] args) throws CounterException {
-        Counter c = new UpperLimitedPositiveCounter(0,100);
+        Counter counter = new Counter(0);
+        counter.add(20);
+        counter.add(-10);
+        System.out.println(counter.getValue());
 
-        c.add(50);
-        c.add(51);
-        System.out.println(c.getValue());
+        UpperLimitedPositiveCounter upperLimitedPositiveCounter = new UpperLimitedPositiveCounter(0,100);
+        upperLimitedPositiveCounter.add(99);
+        upperLimitedPositiveCounter.inc();
+        System.out.println(upperLimitedPositiveCounter.getValue());
+
+
     }
 }

@@ -2,37 +2,21 @@ package ch.hesge.cours634.counter;
 
 public class Counter implements ICounter {
 
-    private int v;
-    private int valMax;
+    private int valeur;
 
-
-    public Counter(int init, int valMax) throws CounterException {
-        if (init < 0){
-            throw new CounterException("la valeur ne peut pas être négative");
-        }
-        v = init;
-        this.valMax = valMax;
+    public Counter(int init) {
+        this.valeur = init;
     }
 
     public void inc() throws CounterException {
-        if (v+1==valMax){
-            throw new CounterException("Valeur max atteinte");
-        }
-        v+=1;
+       valeur++;
     }
 
     public void add(int step) throws CounterException {
-        if (step < 0){
-            throw new CounterException("Le step ne peut pas être plus petit que 0");
-        }
-        if (v+step>valMax){
-            throw new CounterException("Valeur max atteinte");
-        }
-        v+=step;
-
+      valeur+=step;
     }
 
     public int getValue() {
-        return v;
+        return valeur;
     }
 }
